@@ -25,9 +25,8 @@ require __DIR__ . '/includes/site_header.php';
 
 <div class="hero">
     <div class="hero.cta">
-            <h1> <?= h(SITE_NAME) ?></h1>
-            <button>Call to Action</button>
-            <a href="posts.php">View All Posts</a>
+        <h1> <?= h(SITE_NAME) ?></h1>
+        <a href="posts.php"> <button>View posts</button></a>
     </div>
 </div>
 

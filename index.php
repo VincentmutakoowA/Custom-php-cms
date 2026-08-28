@@ -14,10 +14,8 @@ $stmt = db()->prepare(
      LEFT JOIN categories ON posts.category_id = categories.id
      WHERE posts.status = 'published'
      ORDER BY posts.created_at DESC
-     LIMIT ? OFFSET ?"
+     LIMIT 4"
 );
-$stmt->bindValue(1, $perPage, PDO::PARAM_INT);
-$stmt->bindValue(2, $offset, PDO::PARAM_INT);
 $stmt->execute();
 $posts = $stmt->fetchAll();
 
@@ -26,7 +24,11 @@ require __DIR__ . '/includes/site_header.php';
 ?>
 
 <div class="hero">
-    <h1> <?= h(SITE_NAME) ?></h1>
+    <div class="hero.cta">
+            <h1> <?= h(SITE_NAME) ?></h1>
+            <button>Call to Action</button>
+            <a href="posts.php">View All Posts</a>
+    </div>
 </div>
 
 <div class="wrap">
@@ -36,7 +38,7 @@ require __DIR__ . '/includes/site_header.php';
         <p>No posts published yet.</p>
     <?php endif; ?>
 
-    <div class="post-grid">
+    <div class="latest-posts-grid">
         <?php foreach ($posts as $post): ?>
             <article class="post-card">
                 <?php if ($post['featured_image']): ?>

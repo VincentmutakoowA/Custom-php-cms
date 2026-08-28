@@ -21,7 +21,6 @@ $user = current_user();
             <nav>
                 <a href="index.php">Dashboard</a>
                 <a href="posts.php">Posts</a>
-                <a href="pages.php">Pages</a>
                 <a href="categories.php">Categories</a>
                 <a href="media.php">Media</a>
                 <?php if (is_admin()): ?>

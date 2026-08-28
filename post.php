@@ -25,7 +25,8 @@ $pageTitle = $post['title'];
 require __DIR__ . '/includes/site_header.php';
 ?>
 
-<article class="single-post">
+<div class="wrap">
+    <article class="single-post">
     <h1><?= h($post['title']) ?></h1>
     <div class="meta">
         By <?= h($post['author_name'] ?? 'Unknown') ?>
@@ -39,6 +40,8 @@ require __DIR__ . '/includes/site_header.php';
     <?php endif; ?>
     <div class="content"><?= $post['content'] ?></div>
 </article>
+
+</div>
 
 <p><a href="index.php">&larr; Back to all posts</a></p>
 

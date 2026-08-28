@@ -28,7 +28,8 @@ $pageTitle = 'Category: ' . $category['name'];
 require __DIR__ . '/includes/site_header.php';
 ?>
 
-<h1>Category: <?= h($category['name']) ?></h1>
+<div class="wrap">
+    <h1>Category: <?= h($category['name']) ?></h1>
 
 <?php if (empty($posts)): ?>
     <p>No posts in this category yet.</p>
@@ -45,6 +46,7 @@ require __DIR__ . '/includes/site_header.php';
         <a class="read-more" href="post.php?slug=<?= urlencode($post['slug']) ?>">Read more &rarr;</a>
     </article>
 <?php endforeach; ?>
+</div>
 </div>
 
 <?php require __DIR__ . '/includes/site_footer.php'; ?>

@@ -23,6 +23,7 @@ body {
 .hero { width: 100%; height: 500px; background-color: #000; 
     display: flex; justify-content: center; align-items: center;
  }
+ .hero.cta { display: flex; flex-direction: column; gap: 12px;}
 
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -40,6 +41,7 @@ a:hover { text-decoration: underline; }
 main.wrap { padding: 32px 20px 60px; min-height: 60vh; }
 
 .site-footer {
+    margin-top: 32px;
     border-top: 1px solid var(--border);
     padding: 20px 0;
     color: var(--muted);
@@ -60,6 +62,16 @@ main.wrap { padding: 32px 20px 60px; min-height: 60vh; }
     gap: 24px;
     margin-top: 24px;
 }
+.latest-posts-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 0px;
+}
+@media (min-width: 600px) {.latest-posts-grid {  grid-template-columns: repeat(2, 1fr); }}
+/* Desktop (4 columns = 1 row for 4 posts) */
+@media (min-width: 1024px) {.latest-posts-grid {    grid-template-columns: repeat(4, 1fr); }}
+
 .post-card {
     background: #fff;
     border: 1px solid var(--border);
